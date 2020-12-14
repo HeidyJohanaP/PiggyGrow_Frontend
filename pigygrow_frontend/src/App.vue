@@ -4,11 +4,13 @@
       <h1>Piggy Grow <img src="./assets/piggy-bank-1022853_960_720.png" width="70px" height="70px" align=middle></h1>
       <nav>
         <button v-on:click="init" v-if="is_auth" >Nuevo Movimiento</button>
-        <button v-on:click="getBalance" v-if="is_auth">Crear Movimientos</button>
+        <button v-on:click="getBalance" v-if="is_auth">Consultar Movimientos</button>
       </nav>
     </div>
 
-    <div class="main-component"></div>
+    <div class="main-component">
+      <router-view></router-view>
+    </div>
 
     <div class="footer">
       <h2>Copyright @PiggyGrow Inc.</h2>
@@ -18,10 +20,14 @@
 
 <script>
 
+import Movimiento from './components/Movimiento'
+
 export default {
   name: "App",
 
-  components: {},
+  components: {
+    Movimiento
+  },
 
   data: function () {
     return {
@@ -89,6 +95,10 @@ main-component {
   margin: 0%;
   padding: 0%;
   background: #fdfefe;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer {
