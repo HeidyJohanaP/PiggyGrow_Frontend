@@ -1,18 +1,32 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <h2>Registro de movimientos:</h2>
+    <!--<img src="./assets/logo.png">
+    <HelloWorld/>-->
+    <router-view></router-view>
+    <consulta /> 
+    <!--<consulta />-->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+//import HelloWorld from './components/HelloWorld'
+import consulta from './components/consulta'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    //HelloWorld,
+    consulta
+  },
+  methods: {
+    mostrarConsulta: function() {
+      this.$router.push({ name: consulta })
+    }
   }
+  //beforeCreate: function() {
+  //  this.$router.push({ name: "consulta" });
+  //}
 }
 </script>
 
