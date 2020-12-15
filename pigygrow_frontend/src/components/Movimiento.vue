@@ -1,9 +1,30 @@
 <template>
+<<<<<<< HEAD
   <div id="Movimiento">
     <h2>NUEVO MOVIMIENTO</h2>
     <br /><br />
     <div>
         <label>id:{{id}}</label><br /><br />
+=======
+    <div id="Movimiento">
+        <h2>NUEVO MOVIMIENTO</h2><br><br>
+        <label>Tipo:  </label>
+        <select v-model="tipo" id="tipo" name="TipoMov">
+            <option selected value="">Elige una opción</option>
+            <option value = "Ingreso">Ingreso</option>
+            <option value = "Gasto">Gasto</option>
+        </select><br><br>
+        <label>Valor:  </label>
+        <input v-model="valor" id="valor" type="numeric"><br><br>
+        <label>Categoria:  </label>
+        <input v-model="categoria" id="categoria" type="text" ><br><br>
+        <label>Descripción:  </label>
+        <input v-model="descripcion" id="descripcion" type="text" style= "height:50px" ><br><br>
+        <label>Fecha:  </label>
+        <input v-model="fecha" id="fecha" type="date"><br><br>
+        <button v-on:click = "NewMov" >Agregar</button>
+
+>>>>>>> f2e3e1429b39b4d6b8f52e6163bc952a1107aec8
     </div>
     <label>Tipo: </label>
     <select v-model="tipo" id="tipo" name="TipoMov">
@@ -36,7 +57,11 @@ export default {
     name: "crear_movimiento",
     data: function() {
         return {
+<<<<<<< HEAD
             id: 0,
+=======
+            id: 10,
+>>>>>>> f2e3e1429b39b4d6b8f52e6163bc952a1107aec8
             tipo: "",
             fecha: "",
             valor: "",
@@ -58,7 +83,7 @@ export default {
             };
         
             axios
-                .post("http://localhost:8000/mov/nuevo/", datosJSON)
+                .post("http://localhost:8000/mov/nuevo", datosJSON)
                 .then(respuesta => {
                 alert(respuesta.data.mensaje);
                 })
