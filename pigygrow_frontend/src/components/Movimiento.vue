@@ -3,9 +3,9 @@
         <h2>NUEVO MOVIMIENTO</h2><br><br>
         <label>Tipo:  </label>
         <select v-model="tipo" id="tipo" name="TipoMov">
-            <option selected value="0">Elige una opción</option>
-            <option value = "1">Ingreso</option>
-            <option value = "2">Gasto</option>
+            <option selected value="">Elige una opción</option>
+            <option value = "Ingreso">Ingreso</option>
+            <option value = "Gasto">Gasto</option>
         </select><br><br>
         <label>Valor:  </label>
         <input v-model="valor" id="valor" type="numeric"><br><br>
@@ -26,7 +26,7 @@ export default {
     name: "crear_movimiento",
     data: function() {
         return {
-            id: "",
+            id: 10,
             tipo: "",
             fecha: "",
             valor: "",
@@ -46,7 +46,7 @@ export default {
             };
         
             axios
-                .post("http://localhost:8000/mov/nuevo/", datosJSON)
+                .post("http://localhost:8000/mov/nuevo", datosJSON)
                 .then(respuesta => {
                 alert(respuesta.data.mensaje);
                 })
