@@ -1,5 +1,6 @@
 <template>
  <div>
+   <h2 id="titulo_tabla">Resultados de consulta:</h2>
   <div id="cont_tabla">
     <table class="tb_movimientos">
       <thead>
@@ -31,51 +32,12 @@ export default {
   name: "consulta",
   data: function() {
     return {
-      movimiento: [
-        {
-          id: 1,
-          fecha: '2020-12-01',
-          valor: 50000,
-          categoria: "Alimentos",
-          descripcion: "Almuerzo en Leños Steak",
-          tipo: "Gasto"
-        },
-        {
-          id:2,
-          fecha: '2020-12-01',
-          valor: 20000,
-          categoria: "Transporte",
-          descripcion: "Taxi al trabajo",
-          tipo: "Gasto"
-        },
-        {
-          id:3,
-          fecha: '2020-12-01',
-          valor: 20000,
-          categoria: "Alimentos",
-          descripcion: "Hamburguesa",
-          tipo: "Gasto"
-        },               
-        {
-          id:4,
-          fecha: '2020-12-02',
-          valor: 1000000,
-          categoria: "Salario",
-          descripcion: "Quincena",
-          tipo: "Ingreso"
-          },
-        {
-          id:5,
-          fecha: '2020-12-02',
-          valor: 6000,
-          categoria: "Alimentos",
-          descripcion: "Desayuno",
-          tipo: "Gasto"
-        }  
-      ]
-    }
+      movimiento: []
+    };
   },
-  beforeCreate: function() {
+
+
+   beforeCreate: function() {
     axios
       .get("http://127.0.0.1:8000/mov")
       .then(respuesta => {
@@ -91,6 +53,10 @@ export default {
 
 
 <style scoped>
+
+#titulo_tabla {
+  text-align: center
+}
 #cont_tabla {
   display: flex;
   width: 100%;
