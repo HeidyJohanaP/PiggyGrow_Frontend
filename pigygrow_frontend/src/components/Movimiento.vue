@@ -54,10 +54,17 @@ export default {
                 alert("error en el servidor");
             });
 
+
         alert("Se creo un nuevo movimiento")
         }
             
     },
+    /*
+    created: function() {
+        this.datoRecibido = this.$route.params.dato;
+    }
+    */
+
 };
 
 </script>

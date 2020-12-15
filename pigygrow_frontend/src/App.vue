@@ -3,8 +3,10 @@
     <div class="header">
       <h1>Piggy Grow <img src="./assets/piggy-bank-1022853_960_720.png" width="70px" height="70px" align=middle></h1>
       <nav>
-        <button v-on:click="init" v-if="is_auth" >Nuevo Movimiento</button>
-        <button v-on:click="getBalance" v-if="is_auth">Consultar Movimientos</button>
+        <button v-on:click="Movement" >Nuevo Movimiento</button>
+        <button>Consultar Movimientos</button>
+        <button> Eliminar movimiento </button>
+        <button>Cerrar Sesión</button>
       </nav>
     </div>
 
@@ -29,12 +31,25 @@ export default {
     Movimiento
   },
 
-  data: function () {
-    return {
-      is_auth: localStorage.getItem("isAuth") || false,
-    };
-  },
+/*data: function () {
+  return {
+  is_auth: localStorage.getItem("isAuth") || false,
+  };
+  },*/
+
+  methods: {
+    Movement: function() {
+      this.$router.push({ name: "crear_movimiento" });
+    },
   
+  },
+
+/*beforeCreate: function() {
+  if (this.$route.name !="crear_movimiento"){
+    this.$router.push({ name: "crear_movimiento"});
+  }
+},*/
+
 };
 
 </script>
