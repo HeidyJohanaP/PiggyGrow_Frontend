@@ -29,12 +29,11 @@
 <script>
 import axios from "axios";
 export default {
-   
-
     name: "crear_movimiento",
     data: function() {
         return {
-            id: 0,
+
+            id: 10,
             tipo: "",
             fecha: "",
             valor: "",
