@@ -40,7 +40,7 @@ export default {
 
    beforeCreate: function() {
     axios
-      .get("http://127.0.0.1:8000/mov")
+      .get("https://piggy-grow.herokuapp.com/mov")
       .then(respuesta => {
         this.movimiento = respuesta.data;
       })

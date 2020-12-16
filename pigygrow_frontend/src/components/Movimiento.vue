@@ -1,52 +1,29 @@
 <template>
-<<<<<<< HEAD
   <div id="Movimiento">
-    <h2>NUEVO MOVIMIENTO</h2>
-    <br /><br />
+    <h2>NUEVO MOVIMIENTO</h2><br /><br />
+    
     <div>
-        <label>id:{{id}}</label><br /><br />
-=======
-    <div id="Movimiento">
-        <h2>NUEVO MOVIMIENTO</h2><br><br>
-        <label>Tipo:  </label>
-        <select v-model="tipo" id="tipo" name="TipoMov">
-            <option selected value="">Elige una opción</option>
-            <option value = "Ingreso">Ingreso</option>
-            <option value = "Gasto">Gasto</option>
-        </select><br><br>
-        <label>Valor:  </label>
-        <input v-model="valor" id="valor" type="numeric"><br><br>
-        <label>Categoria:  </label>
-        <input v-model="categoria" id="categoria" type="text" ><br><br>
-        <label>Descripción:  </label>
-        <input v-model="descripcion" id="descripcion" type="text" style= "height:50px" ><br><br>
-        <label>Fecha:  </label>
-        <input v-model="fecha" id="fecha" type="date"><br><br>
-        <button v-on:click = "NewMov" >Agregar</button>
-
->>>>>>> f2e3e1429b39b4d6b8f52e6163bc952a1107aec8
+      <label>id: </label>
+      <input v-model="id" id="id" type="numeric" /><br /><br /> 
     </div>
+
     <label>Tipo: </label>
     <select v-model="tipo" id="tipo" name="TipoMov">
       <option selected value="">Elige una opción</option>
       <option value="Ingreso">Ingreso</option>
-      <option value="Gasto">Gasto</option></select
-    ><br /><br />
+      <option value="Gasto">Gasto</option></select>
+    <br /><br />
     <label>Valor: </label>
-    <input v-model="valor" id="valor" type="numeric" /><br /><br />
+    <input v-model="valor" id="valor" type="number" /><br /><br />
     <label>Categoria: </label>
     <input v-model="categoria" id="categoria" type="text" /><br /><br />
     <label>Descripción: </label>
-    <input
-      v-model="descripcion"
-      id="descripcion"
-      type="text"
-      style="height: 50px"
-    /><br /><br />
+    <input v-model="descripcion" id="descripcion" type="text" style="height: 50px"/><br /><br />
     <label>Fecha: </label>
     <input v-model="fecha" id="fecha" type="date" /><br /><br />
     <button v-on:click="NewMov">Agregar</button>
   </div>
+
 </template>
 
 <script>
@@ -57,11 +34,7 @@ export default {
     name: "crear_movimiento",
     data: function() {
         return {
-<<<<<<< HEAD
             id: 0,
-=======
-            id: 10,
->>>>>>> f2e3e1429b39b4d6b8f52e6163bc952a1107aec8
             tipo: "",
             fecha: "",
             valor: "",
@@ -83,7 +56,7 @@ export default {
             };
         
             axios
-                .post("http://localhost:8000/mov/nuevo", datosJSON)
+                .post("https://piggy-grow.herokuapp.com/mov/nuevo", datosJSON)
                 .then(respuesta => {
                 alert(respuesta.data.mensaje);
                 })
@@ -132,5 +105,10 @@ created: function() {
   border: 1px solid #e5e7e9;
 }
 
+input { 
+  height: 20px;
+  text-align: center;
+  margin-left: 10px;
+}
 
 </style>

@@ -14,9 +14,15 @@
       <router-view></router-view>
     </div>
 
+    <div v-dragscroll> ... </div>
+    <!-- For more control -->
+    <div v-dragscroll="true"> ... </div>
+
     <div class="footer">
       <h2>Copyright @PiggyGrow Inc.</h2>
     </div>
+    
+
   </div>
 </template>
 
@@ -133,6 +139,7 @@ export default {
     position: absolute;
     bottom: 0;
     left: 0;
+	  display: block;
 
   }
 
