@@ -14,9 +14,15 @@
       <router-view></router-view>
     </div>
 
+    <div v-dragscroll> ... </div>
+    <!-- For more control -->
+    <div v-dragscroll="true"> ... </div>
+
     <div class="footer">
       <h2>Copyright @PiggyGrow Inc.</h2>
     </div>
+    
+
   </div>
 </template>
 
@@ -139,6 +145,7 @@ beforeCreate: function() {
     position: relative;
     /*bottom: 0;*/
     left: 0;
+	  display: block;
 
   }
 
@@ -151,6 +158,7 @@ beforeCreate: function() {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 16px;
   
   }
 </style>

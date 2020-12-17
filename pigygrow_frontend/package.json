@@ -13,7 +13,11 @@
     "axios": "^0.21.0",
     "chart.js": "^2.9.4",
     "vue": "^2.5.2",
+<<<<<<< HEAD
     "vue-chartjs": "^3.5.1",
+=======
+    "vue-dragscroll": "^2.1.0",
+>>>>>>> be79e57a44502b3eeecc6ba1d8f3edf9bfe1769c
     "vue-router": "^3.4.9"
   },
   "devDependencies": {
