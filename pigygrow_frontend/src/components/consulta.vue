@@ -5,7 +5,7 @@
     <table class="tb_movimientos">
       <thead>
         <tr>
-          <th>id</th> 
+          <!--<th>id</th>-->
           <th>Tipo</th>            
           <th>Fecha</th>
           <th>Valor</th>
@@ -15,7 +15,7 @@
       </thead>
       <tbody>
         <tr v-for="m in movimiento" v-bind:key="m.id">
-          <td>{{ m.id }}</td>
+          <!--<td>{{ m.id }}</td>-->
           <td>{{ m.tipo }}</td>
           <td>{{ m.fecha }}</td>
           <td>{{ m.valor }}</td>
@@ -37,10 +37,10 @@ export default {
       movimiento: []
     };
   },
-
    beforeCreate: function() {
     axios
       .get("https://piggy-grow.herokuapp.com/mov")
+      /*.get("http://localhost:8000/mov") */  
       .then(respuesta => {
         this.movimiento = respuesta.data;
       })

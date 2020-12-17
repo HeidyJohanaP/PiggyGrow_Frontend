@@ -2,10 +2,10 @@
   <div id="Movimiento">
     <h2>NUEVO MOVIMIENTO</h2><br /><br />
     
-    <div>
+    <!--<div>
       <label>id: </label>
       <input v-model="id" id="id" type="number" /><br /><br /> 
-    </div>
+    </div>-->
 
     <label>Tipo: </label>
     <select v-model="tipo" id="tipo" name="TipoMov">
@@ -45,7 +45,7 @@ export default {
     methods: {
         NewMov: function(){
             var datosJSON = {
-                id: this.id++,
+                id: 1,
                 tipo: this.tipo,
                 fecha: this.fecha,
                 valor: this.valor,
@@ -56,6 +56,7 @@ export default {
         
             axios
                 .post("https://piggy-grow.herokuapp.com/mov/nuevo", datosJSON)
+               /*.post("http://localhost:8000/mov/nuevo", datosJSON) */
                 .then(respuesta => {
                     alert(respuesta.data.message);
                 })
