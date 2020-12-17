@@ -5,7 +5,7 @@
       <nav>
         <button v-on:click="Movement" >Nuevo Movimiento</button>
         <button v-on:click="mostrarConsulta">Consultar Movimientos</button>
-        <button> Eliminar movimiento </button>
+        <button>Eliminar movimiento </button>
         <button>Cerrar Sesión</button>
       </nav>
     </div>
@@ -24,13 +24,15 @@
 
 import consulta from './components/consulta'
 import Movimiento from './components/Movimiento'
+import reportes from './components/reportes'
 
 export default {
   name: "App",
 
   components: {
     Movimiento,
-    consulta
+    consulta,
+    reportes
   },
     
 /*data: function () {
@@ -49,13 +51,17 @@ export default {
   
   },
 
+  verReporte: function() {
+    this.$router.push({ name: "reporte"})
+  },
+
 },
 
-/*beforeCreate: function() {
+beforeCreate: function() {
   if (this.$route.name !="crear_movimiento"){
     this.$router.push({ name: "crear_movimiento"});
   }
-},*/
+},
 
 };
 
@@ -130,8 +136,8 @@ export default {
     width: 100%;
     background-color:pink;
     color: #1b1e20;
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    /*bottom: 0;*/
     left: 0;
 
   }
@@ -139,6 +145,9 @@ export default {
   .footer h2 {
     width: 100%;
     height: 100%;
+    padding: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;

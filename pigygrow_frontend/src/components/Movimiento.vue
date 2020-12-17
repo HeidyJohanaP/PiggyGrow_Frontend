@@ -46,16 +46,17 @@ export default {
             };
         
             axios
-                .post("http://localhost:8000/mov/nuevo", datosJSON)
+                .post("https://piggy-grow.herokuapp.com/mov/nuevo", datosJSON)
                 .then(respuesta => {
-                alert(respuesta.data.mensaje);
+                    alert(respuesta.data.message);
                 })
                 .catch(error => {
-                    alert("Error en el servidor.");
+                    alert(error.response.data.detail);
+                    //alert("Error en el servidor.");
                 });
 
 
-        alert("Se creó un nuevo movimiento.")
+        //alert("Se creó un nuevo movimiento.")
         }
             
     },

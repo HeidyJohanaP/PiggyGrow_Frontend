@@ -2,6 +2,8 @@ import vueRouter from 'vue-router'
 import Movimiento from './components/Movimiento'
 import consulta from './components/consulta'
 import App from './App'
+import reportes from './components/reportes'
+
 
 const router = new vueRouter({
 
@@ -16,6 +18,11 @@ const router = new vueRouter({
             name: "consulta",
             path: "/consulta",
             component: consulta
+        },
+        {
+            name: "reporte",
+            path: "/reporte",
+            component: reportes
         }
     ]
 });
